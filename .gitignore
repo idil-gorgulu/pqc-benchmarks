@@ -1,0 +1,37 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pycacheprefix/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Keys/certs (never commit)
+*.key
+*.crt
+*.csr
+*.srl
+artifacts/certs/
+
+# Captures / large artifacts
+*.pcap
+*.pcapng
+runs/**/cap_*.pcap
+runs/**/capture.pcap
+
+# Generated outputs
+runs/**/hs_*.csv
+runs/**/frames_*.csv
+runs/**/analysis_*.csv
+runs/**/summary_*.txt
+runs/**/server.log
+runs/**/server.pid
+
+# Plots
+*.png
+*.pdf

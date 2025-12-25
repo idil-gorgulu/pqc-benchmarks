@@ -1,0 +1,26 @@
+# OpenSSL configuration to load oqsprovider alongside default provider.
+# Use with:
+#   export OPENSSL_CONF=/path/to/configs/openssl-pqc.cnf
+#   export OSSL_PROVIDER_PATH=/path/to/openssl/lib64/ossl-modules
+
+openssl_conf = openssl_init
+
+[openssl_init]
+providers = provider_sect
+alg_section = algorithm_sect
+
+[provider_sect]
+default = default_sect
+oqsprovider = oqsprovider_sect
+
+[default_sect]
+activate = 1
+
+# If your oqsprovider module is named oqsprovider.so and is in OSSL_PROVIDER_PATH,
+# OpenSSL will find it. If not, set 'module = /absolute/path/to/oqsprovider.so'.
+[oqsprovider_sect]
+activate = 1
+# module = oqsprovider
+
+[algorithm_sect]
+# Optional: keep empty; algorithms are registered by providers.
