@@ -14,11 +14,12 @@ What this repo provides
 
 Repository structure
 - configs/                  OpenSSL provider configuration
-- scripts/                  End-to-end experiment scripts
+- scripts/                  Experiment scripts (see scripts/tls_level/ and scripts/algorithm_level/)
 - analysis/                 Python analyzer + plotting helpers
 - docs/                     Supplementary notes, methodology, limitations
 - data/sample/              Sample generation instructions (PCAP not committed)
 - results/sample_outputs/   Example CSV layouts (tiny, representative)
+- terminal_log_algorithm_level.txt  Historical terminal session (algorithm-level microbenchmarks)
 
 Prerequisites
 
@@ -62,10 +63,10 @@ pip install -r analysis/requirements.txt
 
 Generate PQC cert/key (ML-DSA-44):
 mkdir -p artifacts/certs
-./scripts/mk_pqc_cert.sh MLDSA44 artifacts/certs/server_pq
+./scripts/tls_level/mk_pqc_cert.sh MLDSA44 artifacts/certs/server_pq
 
 Run a short burst (10 seconds capture, PQ group MLKEM512):
-./scripts/run_burst.sh \
+./scripts/tls_level/run_burst.sh \
   --mode pq \
   --port 4433 \
   --group MLKEM512 \
@@ -89,6 +90,16 @@ We compute per TCP stream:
 - bytes_c2s / bytes_s2c: sum of TCP payload bytes (tcp.len) within [CH, END] (fallback to frame.len if needed)
 
 These definitions are documented in docs/METHODOLOGY.md.
+
+Algorithm-level microbenchmarks (Kyber/Dilithium/OpenSSL speed)
+
+In addition to the TLS-level pipeline, this repo also includes **algorithm-level** runners derived from `terminal_log_algorithm_level.txt`.
+
+Run all algorithm-level benchmarks (default output: runs/algorithm_level/<tag>):
+./scripts/algorithm_level/run_all.sh --tag wsl_try1
+
+Documentation:
+- docs/ALGORITHM_LEVEL.md
 
 Reproducing figures/tables
 Use analysis/plot_figures.py to generate plots from analysis_*.csv files (example usage in the script header).

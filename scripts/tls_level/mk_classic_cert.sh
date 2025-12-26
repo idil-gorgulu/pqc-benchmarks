@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Generate a self-signed classical server certificate.
+# TLS-level: Generate a self-signed classical server certificate.
+#
 # Usage:
-#   ./scripts/mk_classic_cert.sh ecdsa_p256 artifacts/certs/server_classic
-#   ./scripts/mk_classic_cert.sh rsa_2048  artifacts/certs/server_classic
+#   ./scripts/tls_level/mk_classic_cert.sh ecdsa_p256 artifacts/certs/server_classic
+#   ./scripts/tls_level/mk_classic_cert.sh rsa_2048  artifacts/certs/server_classic
 #
 # Output:
 #   <prefix>.key
@@ -46,3 +47,5 @@ openssl req -new -x509 -key "${OUT}.key" -out "${OUT}.crt" \
 
 ls -l "${OUT}.key" "${OUT}.crt"
 echo "OK: generated ${OUT}.crt / ${OUT}.key with $MODE"
+
+

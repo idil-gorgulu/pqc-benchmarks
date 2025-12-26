@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# TLS-level environment sanity check.
+#
 echo "[1] OpenSSL version:"
 openssl version -v
 
@@ -14,3 +16,5 @@ echo "[4] PQ KEMs (ML-KEM):"
 openssl list -kem-algorithms | grep -E 'ML-KEM|MLKEM|Kyber' || true
 
 echo "OK"
+
+

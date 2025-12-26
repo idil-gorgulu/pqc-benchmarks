@@ -25,7 +25,7 @@ If the client port cannot be inferred, byte counts fall back to 0 for that strea
 
 ## Inputs produced by the scripts
 
-`scripts/extract_windows.sh` uses `tshark` to produce two TAB-separated files per time window:
+`scripts/tls_level/extract_windows.sh` uses `tshark` to produce two TAB-separated files per time window:
 
 - `hs_<i>.csv`: handshake records with `tls.handshake.type` and timing
 - `frames_<i>.csv`: all frames in the window for byte counting

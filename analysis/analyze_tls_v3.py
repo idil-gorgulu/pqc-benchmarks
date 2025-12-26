@@ -5,7 +5,7 @@ Analyze TLS handshake timing and bytes per TCP stream.
 Inputs are TAB-separated outputs produced by tshark (-T fields).
 We expect:
 
-hs.csv columns (by scripts/extract_windows.sh):
+hs.csv columns (by scripts/tls_level/extract_windows.sh):
   0 tcp.stream
   1 tls.handshake.type
   2 frame.time_epoch

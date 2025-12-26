@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Slice capture.pcap into windows from bursts.csv and run:
+# TLS-level: Slice capture.pcap into windows from bursts.csv and run:
 # - tshark extraction: hs_i.csv (handshake records), frames_i.csv (all frames)
 # - python analysis: analysis_i.csv + summary_i.txt
 #
 # Usage:
-#   ./scripts/extract_windows.sh --pcap capture.pcap --bursts bursts.csv --port 4433 --analyzer analysis/analyze_tls_v3.py
+#   ./scripts/tls_level/extract_windows.sh --pcap capture.pcap --bursts bursts.csv --port 4433 --analyzer analysis/analyze_tls_v3.py
 #
 # bursts.csv format:
 #   t0,t1
@@ -29,7 +29,7 @@ while [[ $# -gt 0 ]]; do
     --port) PORT="$2"; shift 2 ;;
     --analyzer) ANALYZER="$2"; shift 2 ;;
     -h|--help)
-      sed -n '1,140p' "$0"
+      sed -n '1,160p' "$0"
       exit 0
       ;;
     *) echo "Unknown arg: $1" >&2; exit 1 ;;
@@ -82,3 +82,5 @@ tail -n +2 "$BURSTS" | while IFS=, read -r T0 T1; do
 
   i=$((i+1))
 done
+
+

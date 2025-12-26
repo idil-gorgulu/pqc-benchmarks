@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Generate a self-signed PQC server certificate using ML-DSA.
+# TLS-level: Generate a self-signed PQC server certificate using ML-DSA.
+#
 # Usage:
-#   ./scripts/mk_pqc_cert.sh MLDSA44 artifacts/certs/server_pq
+#   ./scripts/tls_level/mk_pqc_cert.sh MLDSA44 artifacts/certs/server_pq
 #
 # Produces:
 #   <prefix>.key
@@ -21,3 +22,5 @@ openssl req -new -x509 -key "${OUT}.key" -out "${OUT}.crt" \
 
 ls -l "${OUT}.key" "${OUT}.crt"
 echo "OK: generated ${OUT}.crt / ${OUT}.key with $SIG"
+
+

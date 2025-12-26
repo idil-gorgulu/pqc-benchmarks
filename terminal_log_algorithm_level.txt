@@ -1,0 +1,1386 @@
+git clone https://github.com/pq-crystals/kyber.git
+git clone https://github.com/pq-crystals/dilithium.git
+elifdicledemir@skywalker:~$ cd kyber/ref
+elifdicledemir@skywalker:~/kyber/ref$ cd test
+elifdicledemir@skywalker:~/kyber/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/ref/test$ taskset -c 0 ./test_kyber512
+CRYPTO_SECRETKEYBYTES:  1632
+CRYPTO_PUBLICKEYBYTES:  800
+CRYPTO_CIPHERTEXTBYTES: 768
+elifdicledemir@skywalker:~/kyber/ref/test$ taskset -c 0 ./test_kyber768
+CRYPTO_SECRETKEYBYTES:  2400
+CRYPTO_PUBLICKEYBYTES:  1184
+CRYPTO_CIPHERTEXTBYTES: 1088
+elifdicledemir@skywalker:~/kyber/ref/test$ taskset -c 0 ./test_kyber1024
+CRYPTO_SECRETKEYBYTES:  3168
+CRYPTO_PUBLICKEYBYTES:  1568
+CRYPTO_CIPHERTEXTBYTES: 1568
+elifdicledemir@skywalker:~/kyber/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/ref/test$ taskset -c 0 ./test_speed512
+gen_a:
+median: 15097 cycles/ticks
+average: 18546 cycles/ticks
+
+poly_getnoise_eta1:
+median: 2578 cycles/ticks
+average: 2842 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1490 cycles/ticks
+average: 1554 cycles/ticks
+
+NTT:
+median: 4397 cycles/ticks
+average: 4689 cycles/ticks
+
+INVNTT:
+median: 5953 cycles/ticks
+average: 6331 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 4143 cycles/ticks
+average: 4487 cycles/ticks
+
+poly_tomsg:
+median: 365 cycles/ticks
+average: 421 cycles/ticks
+
+poly_frommsg:
+median: 971 cycles/ticks
+average: 1007 cycles/ticks
+
+poly_compress:
+median: 279 cycles/ticks
+average: 543 cycles/ticks
+
+poly_decompress:
+median: 135 cycles/ticks
+average: 162 cycles/ticks
+
+polyvec_compress:
+median: 1300 cycles/ticks
+average: 1370 cycles/ticks
+
+polyvec_decompress:
+median: 763 cycles/ticks
+average: 840 cycles/ticks
+
+indcpa_keypair:
+median: 55383 cycles/ticks
+average: 57927 cycles/ticks
+
+indcpa_enc:
+median: 67899 cycles/ticks
+average: 72566 cycles/ticks
+
+indcpa_dec:
+median: 21466 cycles/ticks
+average: 24917 cycles/ticks
+
+kyber_keypair_derand:
+median: 62406 cycles/ticks
+average: 65963 cycles/ticks
+
+kyber_keypair:
+median: 66846 cycles/ticks
+average: 75407 cycles/ticks
+
+kyber_encaps_derand:
+median: 75211 cycles/ticks
+average: 80577 cycles/ticks
+
+kyber_encaps:
+median: 75733 cycles/ticks
+average: 82423 cycles/ticks
+
+kyber_decaps:
+median: 97789 cycles/ticks
+average: 102004 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/ref/test$ taskset -c 0 ./test_speed768
+gen_a:
+median: 29569 cycles/ticks
+average: 32644 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1550 cycles/ticks
+average: 1970 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1570 cycles/ticks
+average: 1645 cycles/ticks
+
+NTT:
+median: 4285 cycles/ticks
+average: 4524 cycles/ticks
+
+INVNTT:
+median: 5958 cycles/ticks
+average: 6592 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 5808 cycles/ticks
+average: 5964 cycles/ticks
+
+poly_tomsg:
+median: 337 cycles/ticks
+average: 377 cycles/ticks
+
+poly_frommsg:
+median: 930 cycles/ticks
+average: 955 cycles/ticks
+
+poly_compress:
+median: 281 cycles/ticks
+average: 440 cycles/ticks
+
+poly_decompress:
+median: 137 cycles/ticks
+average: 162 cycles/ticks
+
+polyvec_compress:
+median: 1909 cycles/ticks
+average: 2031 cycles/ticks
+
+polyvec_decompress:
+median: 1234 cycles/ticks
+average: 1247 cycles/ticks
+
+indcpa_keypair:
+median: 90473 cycles/ticks
+average: 95646 cycles/ticks
+
+indcpa_enc:
+median: 107095 cycles/ticks
+average: 116750 cycles/ticks
+
+indcpa_dec:
+median: 27819 cycles/ticks
+average: 29365 cycles/ticks
+
+kyber_keypair_derand:
+median: 99359 cycles/ticks
+average: 102509 cycles/ticks
+
+kyber_keypair:
+median: 109048 cycles/ticks
+average: 112805 cycles/ticks
+
+kyber_encaps_derand:
+median: 117047 cycles/ticks
+average: 124669 cycles/ticks
+
+kyber_encaps:
+median: 117800 cycles/ticks
+average: 121522 cycles/ticks
+
+kyber_decaps:
+median: 146927 cycles/ticks
+average: 150412 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/ref/test$ taskset -c 0 ./test_speed1024
+gen_a:
+median: 52687 cycles/ticks
+average: 55049 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1568 cycles/ticks
+average: 1656 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1545 cycles/ticks
+average: 1575 cycles/ticks
+
+NTT:
+median: 4346 cycles/ticks
+average: 4589 cycles/ticks
+
+INVNTT:
+median: 5950 cycles/ticks
+average: 6410 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 9889 cycles/ticks
+average: 13462 cycles/ticks
+
+poly_tomsg:
+median: 398 cycles/ticks
+average: 399 cycles/ticks
+
+poly_frommsg:
+median: 1440 cycles/ticks
+average: 1405 cycles/ticks
+
+poly_compress:
+median: 579 cycles/ticks
+average: 675 cycles/ticks
+
+poly_decompress:
+median: 327 cycles/ticks
+average: 363 cycles/ticks
+
+polyvec_compress:
+median: 2428 cycles/ticks
+average: 2625 cycles/ticks
+
+polyvec_decompress:
+median: 1643 cycles/ticks
+average: 1730 cycles/ticks
+
+indcpa_keypair:
+median: 145011 cycles/ticks
+average: 153578 cycles/ticks
+
+indcpa_enc:
+median: 165872 cycles/ticks
+average: 170207 cycles/ticks
+
+indcpa_dec:
+median: 36365 cycles/ticks
+average: 38877 cycles/ticks
+
+kyber_keypair_derand:
+median: 156575 cycles/ticks
+average: 161372 cycles/ticks
+
+kyber_keypair:
+median: 173005 cycles/ticks
+average: 176945 cycles/ticks
+
+kyber_encaps_derand:
+median: 178397 cycles/ticks
+average: 185056 cycles/ticks
+
+kyber_encaps:
+median: 179155 cycles/ticks
+average: 184072 cycles/ticks
+
+kyber_decaps:
+median: 218311 cycles/ticks
+average: 235529 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/ref/test$ cd ..
+elifdicledemir@skywalker:~/kyber/ref$ cd ..
+elifdicledemir@skywalker:~/kyber$ cd avx2/test
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_kyber512
+CRYPTO_SECRETKEYBYTES:  1632
+CRYPTO_PUBLICKEYBYTES:  800
+CRYPTO_CIPHERTEXTBYTES: 768
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_kyber768
+CRYPTO_SECRETKEYBYTES:  2400
+CRYPTO_PUBLICKEYBYTES:  1184
+CRYPTO_CIPHERTEXTBYTES: 1088
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_kyber1024
+CRYPTO_SECRETKEYBYTES:  3168
+CRYPTO_PUBLICKEYBYTES:  1568
+CRYPTO_CIPHERTEXTBYTES: 1568
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_speed2
+taskset: failed to execute ./test_speed2: No such file or directory
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_speed512
+gen_a:
+median: 5192 cycles/ticks
+average: 4894 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1655 cycles/ticks
+average: 1755 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1093 cycles/ticks
+average: 1145 cycles/ticks
+
+NTT:
+median: 131 cycles/ticks
+average: 135 cycles/ticks
+
+INVNTT:
+median: 143 cycles/ticks
+average: 227 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 107 cycles/ticks
+average: 230 cycles/ticks
+
+poly_tomsg:
+median: 20 cycles/ticks
+average: 73 cycles/ticks
+
+poly_frommsg:
+median: 19 cycles/ticks
+average: 19 cycles/ticks
+
+poly_compress:
+median: 17 cycles/ticks
+average: 17 cycles/ticks
+
+poly_decompress:
+median: 21 cycles/ticks
+average: 60 cycles/ticks
+
+polyvec_compress:
+median: 135 cycles/ticks
+average: 182 cycles/ticks
+
+polyvec_decompress:
+median: 51 cycles/ticks
+average: 90 cycles/ticks
+
+indcpa_keypair:
+median: 7043 cycles/ticks
+average: 7601 cycles/ticks
+
+indcpa_enc:
+median: 8204 cycles/ticks
+average: 9845 cycles/ticks
+
+indcpa_dec:
+median: 688 cycles/ticks
+average: 1041 cycles/ticks
+
+kyber_keypair_derand:
+median: 11798 cycles/ticks
+average: 12000 cycles/ticks
+
+kyber_keypair:
+median: 12985 cycles/ticks
+average: 15646 cycles/ticks
+
+kyber_encaps_derand:
+median: 13111 cycles/ticks
+average: 13598 cycles/ticks
+
+kyber_encaps:
+median: 13877 cycles/ticks
+average: 14442 cycles/ticks
+
+kyber_decaps:
+median: 15522 cycles/ticks
+average: 16379 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_speed768
+gen_a:
+median: 9986 cycles/ticks
+average: 10072 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1127 cycles/ticks
+average: 1137 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1102 cycles/ticks
+average: 1110 cycles/ticks
+
+NTT:
+median: 131 cycles/ticks
+average: 134 cycles/ticks
+
+INVNTT:
+median: 141 cycles/ticks
+average: 141 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 160 cycles/ticks
+average: 162 cycles/ticks
+
+poly_tomsg:
+median: 18 cycles/ticks
+average: 18 cycles/ticks
+
+poly_frommsg:
+median: 20 cycles/ticks
+average: 20 cycles/ticks
+
+poly_compress:
+median: 18 cycles/ticks
+average: 17 cycles/ticks
+
+poly_decompress:
+median: 20 cycles/ticks
+average: 20 cycles/ticks
+
+polyvec_compress:
+median: 212 cycles/ticks
+average: 360 cycles/ticks
+
+polyvec_decompress:
+median: 76 cycles/ticks
+average: 76 cycles/ticks
+
+indcpa_keypair:
+median: 13388 cycles/ticks
+average: 13990 cycles/ticks
+
+indcpa_enc:
+median: 12977 cycles/ticks
+average: 13458 cycles/ticks
+
+indcpa_dec:
+median: 979 cycles/ticks
+average: 983 cycles/ticks
+
+kyber_keypair_derand:
+median: 20219 cycles/ticks
+average: 20780 cycles/ticks
+
+kyber_keypair:
+median: 21811 cycles/ticks
+average: 23886 cycles/ticks
+
+kyber_encaps_derand:
+median: 20704 cycles/ticks
+average: 21748 cycles/ticks
+
+kyber_encaps:
+median: 21460 cycles/ticks
+average: 23985 cycles/ticks
+
+kyber_decaps:
+median: 23403 cycles/ticks
+average: 26688 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_speed1024
+gen_a:
+median: 13566 cycles/ticks
+average: 17045 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1109 cycles/ticks
+average: 1177 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1082 cycles/ticks
+average: 1127 cycles/ticks
+
+NTT:
+median: 131 cycles/ticks
+average: 135 cycles/ticks
+
+INVNTT:
+median: 140 cycles/ticks
+average: 145 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 217 cycles/ticks
+average: 245 cycles/ticks
+
+poly_tomsg:
+median: 19 cycles/ticks
+average: 48 cycles/ticks
+
+poly_frommsg:
+median: 20 cycles/ticks
+average: 19 cycles/ticks
+
+poly_compress:
+median: 24 cycles/ticks
+average: 25 cycles/ticks
+
+poly_decompress:
+median: 25 cycles/ticks
+average: 25 cycles/ticks
+
+polyvec_compress:
+median: 347 cycles/ticks
+average: 352 cycles/ticks
+
+polyvec_decompress:
+median: 140 cycles/ticks
+average: 165 cycles/ticks
+
+indcpa_keypair:
+median: 19074 cycles/ticks
+average: 23202 cycles/ticks
+
+indcpa_enc:
+median: 19910 cycles/ticks
+average: 21201 cycles/ticks
+
+indcpa_dec:
+median: 1261 cycles/ticks
+average: 1383 cycles/ticks
+
+kyber_keypair_derand:
+median: 27230 cycles/ticks
+average: 29575 cycles/ticks
+
+kyber_keypair:
+median: 31404 cycles/ticks
+average: 32774 cycles/ticks
+
+kyber_encaps_derand:
+median: 30926 cycles/ticks
+average: 31858 cycles/ticks
+
+kyber_encaps:
+median: 29589 cycles/ticks
+average: 32624 cycles/ticks
+
+kyber_decaps:
+median: 32381 cycles/ticks
+average: 34839 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_kyber512
+CRYPTO_SECRETKEYBYTES:  1632
+CRYPTO_PUBLICKEYBYTES:  800
+CRYPTO_CIPHERTEXTBYTES: 768
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_kyber768
+CRYPTO_SECRETKEYBYTES:  2400
+CRYPTO_PUBLICKEYBYTES:  1184
+CRYPTO_CIPHERTEXTBYTES: 1088
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_kyber1024
+CRYPTO_SECRETKEYBYTES:  3168
+CRYPTO_PUBLICKEYBYTES:  1568
+CRYPTO_CIPHERTEXTBYTES: 1568
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_speed512
+gen_a:
+median: 3015 cycles/ticks
+average: 4451 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1721 cycles/ticks
+average: 1815 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1121 cycles/ticks
+average: 1241 cycles/ticks
+
+NTT:
+median: 128 cycles/ticks
+average: 133 cycles/ticks
+
+INVNTT:
+median: 146 cycles/ticks
+average: 146 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 123 cycles/ticks
+average: 121 cycles/ticks
+
+poly_tomsg:
+median: 22 cycles/ticks
+average: 21 cycles/ticks
+
+poly_frommsg:
+median: 22 cycles/ticks
+average: 22 cycles/ticks
+
+poly_compress:
+median: 19 cycles/ticks
+average: 19 cycles/ticks
+
+poly_decompress:
+median: 23 cycles/ticks
+average: 23 cycles/ticks
+
+polyvec_compress:
+median: 137 cycles/ticks
+average: 183 cycles/ticks
+
+polyvec_decompress:
+median: 54 cycles/ticks
+average: 79 cycles/ticks
+
+indcpa_keypair:
+median: 7610 cycles/ticks
+average: 9985 cycles/ticks
+
+indcpa_enc:
+median: 8236 cycles/ticks
+average: 9307 cycles/ticks
+
+indcpa_dec:
+median: 735 cycles/ticks
+average: 741 cycles/ticks
+
+kyber_keypair_derand:
+median: 11841 cycles/ticks
+average: 12402 cycles/ticks
+
+kyber_keypair:
+median: 12969 cycles/ticks
+average: 13948 cycles/ticks
+
+kyber_encaps_derand:
+median: 14573 cycles/ticks
+average: 16078 cycles/ticks
+
+kyber_encaps:
+median: 13770 cycles/ticks
+average: 14089 cycles/ticks
+
+kyber_decaps:
+median: 16465 cycles/ticks
+average: 18490 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_speed768
+gen_a:
+median: 8414 cycles/ticks
+average: 9765 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1102 cycles/ticks
+average: 1240 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1096 cycles/ticks
+average: 1128 cycles/ticks
+
+NTT:
+median: 126 cycles/ticks
+average: 131 cycles/ticks
+
+INVNTT:
+median: 142 cycles/ticks
+average: 169 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 169 cycles/ticks
+average: 194 cycles/ticks
+
+poly_tomsg:
+median: 19 cycles/ticks
+average: 19 cycles/ticks
+
+poly_frommsg:
+median: 22 cycles/ticks
+average: 22 cycles/ticks
+
+poly_compress:
+median: 19 cycles/ticks
+average: 18 cycles/ticks
+
+poly_decompress:
+median: 21 cycles/ticks
+average: 21 cycles/ticks
+
+polyvec_compress:
+median: 213 cycles/ticks
+average: 392 cycles/ticks
+
+polyvec_decompress:
+median: 78 cycles/ticks
+average: 78 cycles/ticks
+
+indcpa_keypair:
+median: 13389 cycles/ticks
+average: 15344 cycles/ticks
+
+indcpa_enc:
+median: 12923 cycles/ticks
+average: 13336 cycles/ticks
+
+indcpa_dec:
+median: 937 cycles/ticks
+average: 1012 cycles/ticks
+
+kyber_keypair_derand:
+median: 21000 cycles/ticks
+average: 23193 cycles/ticks
+
+kyber_keypair:
+median: 21678 cycles/ticks
+average: 22867 cycles/ticks
+
+kyber_encaps_derand:
+median: 20892 cycles/ticks
+average: 22531 cycles/ticks
+
+kyber_encaps:
+median: 21390 cycles/ticks
+average: 22061 cycles/ticks
+
+kyber_decaps:
+median: 24491 cycles/ticks
+average: 28175 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/kyber/avx2/test$ taskset -c 0 ./test_speed1024
+gen_a:
+median: 17445 cycles/ticks
+average: 18043 cycles/ticks
+
+poly_getnoise_eta1:
+median: 1149 cycles/ticks
+average: 3993 cycles/ticks
+
+poly_getnoise_eta2:
+median: 1109 cycles/ticks
+average: 1142 cycles/ticks
+
+NTT:
+median: 132 cycles/ticks
+average: 206 cycles/ticks
+
+INVNTT:
+median: 142 cycles/ticks
+average: 143 cycles/ticks
+
+polyvec_basemul_acc_montgomery:
+median: 219 cycles/ticks
+average: 312 cycles/ticks
+
+poly_tomsg:
+median: 43 cycles/ticks
+average: 47 cycles/ticks
+
+poly_frommsg:
+median: 42 cycles/ticks
+average: 57 cycles/ticks
+
+poly_compress:
+median: 49 cycles/ticks
+average: 55 cycles/ticks
+
+poly_decompress:
+median: 49 cycles/ticks
+average: 50 cycles/ticks
+
+polyvec_compress:
+median: 561 cycles/ticks
+average: 545 cycles/ticks
+
+polyvec_decompress:
+median: 142 cycles/ticks
+average: 305 cycles/ticks
+
+indcpa_keypair:
+median: 18037 cycles/ticks
+average: 19028 cycles/ticks
+
+indcpa_enc:
+median: 18796 cycles/ticks
+average: 23011 cycles/ticks
+
+indcpa_dec:
+median: 1246 cycles/ticks
+average: 1298 cycles/ticks
+
+kyber_keypair_derand:
+median: 27155 cycles/ticks
+average: 28450 cycles/ticks
+
+kyber_keypair:
+median: 28917 cycles/ticks
+average: 30393 cycles/ticks
+
+kyber_encaps_derand:
+median: 28625 cycles/ticks
+average: 32458 cycles/ticks
+
+kyber_encaps:
+median: 29240 cycles/ticks
+average: 34855 cycles/ticks
+
+kyber_decaps:
+median: 32307 cycles/ticks
+average: 38519 cycles/ticks
+
+elifdicledemir@skywalker:~/kyber/avx2/test$ cd ..
+elifdicledemir@skywalker:~/kyber/avx2$ cd
+elifdicledemir@skywalker:~$ cd dilithium
+elifdicledemir@skywalker:~/dilithium$ cd ref
+elifdicledemir@skywalker:~/dilithium/ref$ cd test
+elifdicledemir@skywalker:~/dilithium/ref/test$ ls
+cpucycles.c  speed_print.c  test_dilithium.c  test_dilithium3  test_mul    test_speed.c  test_speed3  test_vectors.c  test_vectors3
+cpucycles.h  speed_print.h  test_dilithium2   test_dilithium5  test_mul.c  test_speed2   test_speed5  test_vectors2   test_vectors5
+elifdicledemir@skywalker:~/dilithium/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/ref/test$ taskset -c 0 ./test_dilithium2
+CRYPTO_PUBLICKEYBYTES = 1312
+CRYPTO_SECRETKEYBYTES = 2560
+CRYPTO_BYTES = 2420
+elifdicledemir@skywalker:~/dilithium/ref/test$ taskset -c 0 ./test_dilithium3
+CRYPTO_PUBLICKEYBYTES = 1952
+CRYPTO_SECRETKEYBYTES = 4032
+CRYPTO_BYTES = 3309
+elifdicledemir@skywalker:~/dilithium/ref/test$ taskset -c 0 ./test_dilithium5
+CRYPTO_PUBLICKEYBYTES = 2592
+CRYPTO_SECRETKEYBYTES = 4896
+CRYPTO_BYTES = 4627
+elifdicledemir@skywalker:~/dilithium/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/ref/test$ taskset -c 0 ./test_speed2
+polyvec_matrix_expand:
+median: 78306 cycles/ticks
+average: 80164 cycles/ticks
+
+poly_uniform_eta:
+median: 2669 cycles/ticks
+average: 2916 cycles/ticks
+
+poly_uniform_gamma1:
+median: 8691 cycles/ticks
+average: 12079 cycles/ticks
+
+poly_ntt:
+median: 4695 cycles/ticks
+average: 5304 cycles/ticks
+
+poly_invntt_tomont:
+median: 5927 cycles/ticks
+average: 5977 cycles/ticks
+
+poly_pointwise_montgomery:
+median: 769 cycles/ticks
+average: 821 cycles/ticks
+
+poly_challenge:
+median: 1202 cycles/ticks
+average: 1188 cycles/ticks
+
+Keypair:
+median: 175764 cycles/ticks
+average: 182011 cycles/ticks
+
+Sign:
+median: 646757 cycles/ticks
+average: 824822 cycles/ticks
+
+Verify:
+median: 193850 cycles/ticks
+average: 199697 cycles/ticks
+
+elifdicledemir@skywalker:~/dilithium/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/ref/test$ taskset -c 0 ./test_speed3
+polyvec_matrix_expand:
+median: 145255 cycles/ticks
+average: 153242 cycles/ticks
+
+poly_uniform_eta:
+median: 2600 cycles/ticks
+average: 2798 cycles/ticks
+
+poly_uniform_gamma1:
+median: 4844 cycles/ticks
+average: 5378 cycles/ticks
+
+poly_ntt:
+median: 4617 cycles/ticks
+average: 4983 cycles/ticks
+
+poly_invntt_tomont:
+median: 5328 cycles/ticks
+average: 5579 cycles/ticks
+
+poly_pointwise_montgomery:
+median: 708 cycles/ticks
+average: 736 cycles/ticks
+
+poly_challenge:
+median: 1243 cycles/ticks
+average: 2322 cycles/ticks
+
+Keypair:
+median: 312981 cycles/ticks
+average: 334052 cycles/ticks
+
+Sign:
+median: 1051081 cycles/ticks
+average: 1345820 cycles/ticks
+
+Verify:
+median: 300722 cycles/ticks
+average: 315067 cycles/ticks
+
+elifdicledemir@skywalker:~/dilithium/ref/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/ref/test$ taskset -c 0 ./test_speed5
+polyvec_matrix_expand:
+median: 271336 cycles/ticks
+average: 278455 cycles/ticks
+
+poly_uniform_eta:
+median: 2674 cycles/ticks
+average: 2886 cycles/ticks
+
+poly_uniform_gamma1:
+median: 4848 cycles/ticks
+average: 5147 cycles/ticks
+
+poly_ntt:
+median: 5096 cycles/ticks
+average: 5755 cycles/ticks
+
+poly_invntt_tomont:
+median: 5568 cycles/ticks
+average: 6427 cycles/ticks
+
+poly_pointwise_montgomery:
+median: 839 cycles/ticks
+average: 829 cycles/ticks
+
+poly_challenge:
+median: 1259 cycles/ticks
+average: 1305 cycles/ticks
+
+Keypair:
+median: 474137 cycles/ticks
+average: 490765 cycles/ticks
+
+Sign:
+median: 1319198 cycles/ticks
+average: 1638253 cycles/ticks
+
+Verify:
+median: 496410 cycles/ticks
+average: 521574 cycles/ticks
+
+elifdicledemir@skywalker:~/dilithium/ref/test$ cd ..
+elifdicledemir@skywalker:~/dilithium/ref$ cd avx2
+-bash: cd: avx2: No such file or directory
+elifdicledemir@skywalker:~/dilithium/ref$ cd ..
+elifdicledemir@skywalker:~/dilithium$ cd avx2
+elifdicledemir@skywalker:~/dilithium/avx2$ ls
+Makefile  consts.c   fips202.h    ntt.S      params.h     polyvec.c      rejsample.c  shuffle.S    symmetric-shake.c
+align.h   consts.h   fips202x4.c  ntt.h      pointwise.S  polyvec.h      rejsample.h  shuffle.inc  symmetric.h
+api.h     f1600x4.S  fips202x4.h  packing.c  poly.c       randombytes.c  rounding.c   sign.c       test
+config.h  fips202.c  invntt.S     packing.h  poly.h       randombytes.h  rounding.h   sign.h
+elifdicledemir@skywalker:~/dilithium/avx2$ cd test
+elifdicledemir@skywalker:~/dilithium/avx2/test$ ld
+ld: no input files
+elifdicledemir@skywalker:~/dilithium/avx2/test$ ls
+cpucycles.c  cpucycles.h  speed_print.c  speed_print.h  test_dilithium.c  test_mul.c  test_speed.c  test_vectors.c
+elifdicledemir@skywalker:~/dilithium/avx2/test$ cd ..
+elifdicledemir@skywalker:~/dilithium/avx2$ make speed
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=2 \
+  -o test/test_speed2 test/test_speed.c test/speed_print.c test/cpucycles.c randombytes.c \
+  sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=3 \
+  -o test/test_speed3 test/test_speed.c test/speed_print.c test/cpucycles.c randombytes.c \
+  sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=5 \
+  -o test/test_speed5 test/test_speed.c test/speed_print.c test/cpucycles.c randombytes.c \
+  sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+elifdicledemir@skywalker:~/dilithium/avx2$ make
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=2 \
+  -o test/test_dilithium2 test/test_dilithium.c randombytes.c sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=3 \
+  -o test/test_dilithium3 test/test_dilithium.c randombytes.c sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=5 \
+  -o test/test_dilithium5 test/test_dilithium.c randombytes.c sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=2 \
+  -o test/test_vectors2 test/test_vectors.c sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=3 \
+  -o test/test_vectors3 test/test_vectors.c sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+cc -Wall -Wextra -Wpedantic -Wmissing-prototypes -Wredundant-decls -Wshadow -Wpointer-arith -mavx2 -mpopcnt -march=native -mtune=native -O3 -DDILITHIUM_MODE=5 \
+  -o test/test_vectors5 test/test_vectors.c sign.c packing.c polyvec.c poly.c ntt.S invntt.S pointwise.S shuffle.S consts.c rejsample.c rounding.c fips202.c fips202x4.c f1600x4.S symmetric-shake.c
+elifdicledemir@skywalker:~/dilithium/avx2$ cd test
+elifdicledemir@skywalker:~/dilithium/avx2/test$ ls
+cpucycles.c    speed_print.h     test_dilithium3  test_speed.c  test_speed5     test_vectors3
+cpucycles.h    test_dilithium.c  test_dilithium5  test_speed2   test_vectors.c  test_vectors5
+speed_print.c  test_dilithium2   test_mul.c       test_speed3   test_vectors2
+elifdicledemir@skywalker:~/dilithium/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/avx2/test$ taskset -c 0 ./test_speed5
+polyvec_matrix_expand:
+median: 79115 cycles/ticks
+average: 85517 cycles/ticks
+
+poly_uniform_eta:
+median: 1678 cycles/ticks
+average: 1757 cycles/ticks
+
+poly_uniform_gamma1:
+median: 3358 cycles/ticks
+average: 4002 cycles/ticks
+
+poly_ntt:
+median: 477 cycles/ticks
+average: 602 cycles/ticks
+
+poly_invntt_tomont:
+median: 493 cycles/ticks
+average: 550 cycles/ticks
+
+poly_pointwise_montgomery:
+median: 88 cycles/ticks
+average: 98 cycles/ticks
+
+poly_challenge:
+median: 1038 cycles/ticks
+average: 1026 cycles/ticks
+
+Keypair:
+median: 128275 cycles/ticks
+average: 137029 cycles/ticks
+
+Sign:
+median: 240769 cycles/ticks
+average: 302924 cycles/ticks
+
+Verify:
+median: 128357 cycles/ticks
+average: 133917 cycles/ticks
+
+elifdicledemir@skywalker:~/dilithium/avx2/test$ taskset -c 0 ./test_dilithium2
+CRYPTO_PUBLICKEYBYTES = 1312
+CRYPTO_SECRETKEYBYTES = 2560
+CRYPTO_BYTES = 2420
+elifdicledemir@skywalker:~/dilithium/avx2/test$ taskset -c 0 ./test_dilithium3
+CRYPTO_PUBLICKEYBYTES = 1952
+CRYPTO_SECRETKEYBYTES = 4032
+CRYPTO_BYTES = 3309
+elifdicledemir@skywalker:~/dilithium/avx2/test$ taskset -c 0 ./test_dilithium5
+CRYPTO_PUBLICKEYBYTES = 2592
+CRYPTO_SECRETKEYBYTES = 4896
+CRYPTO_BYTES = 4627
+elifdicledemir@skywalker:~/dilithium/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/avx2/test$ taskset -c 0 ./test_speed2
+polyvec_matrix_expand:
+median: 22830 cycles/ticks
+average: 27557 cycles/ticks
+
+poly_uniform_eta:
+median: 1642 cycles/ticks
+average: 1809 cycles/ticks
+
+poly_uniform_gamma1:
+median: 5872 cycles/ticks
+average: 5601 cycles/ticks
+
+poly_ntt:
+median: 834 cycles/ticks
+average: 838 cycles/ticks
+
+poly_invntt_tomont:
+median: 789 cycles/ticks
+average: 793 cycles/ticks
+
+poly_pointwise_montgomery:
+median: 149 cycles/ticks
+average: 210 cycles/ticks
+
+poly_challenge:
+median: 1488 cycles/ticks
+average: 1440 cycles/ticks
+
+Keypair:
+median: 46782 cycles/ticks
+average: 52210 cycles/ticks
+
+Sign:
+median: 119237 cycles/ticks
+average: 153374 cycles/ticks
+
+Verify:
+median: 51976 cycles/ticks
+average: 54545 cycles/ticks
+
+elifdicledemir@skywalker:~/dilithium/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/avx2/test$ taskset -c 0 ./test_speed3
+polyvec_matrix_expand:
+median: 44146 cycles/ticks
+average: 47465 cycles/ticks
+
+poly_uniform_eta:
+median: 1696 cycles/ticks
+average: 2016 cycles/ticks
+
+poly_uniform_gamma1:
+median: 3359 cycles/ticks
+average: 3508 cycles/ticks
+
+poly_ntt:
+median: 518 cycles/ticks
+average: 569 cycles/ticks
+
+poly_invntt_tomont:
+median: 493 cycles/ticks
+average: 549 cycles/ticks
+
+poly_pointwise_montgomery:
+median: 89 cycles/ticks
+average: 89 cycles/ticks
+
+poly_challenge:
+median: 964 cycles/ticks
+average: 1040 cycles/ticks
+
+Keypair:
+median: 79844 cycles/ticks
+average: 91017 cycles/ticks
+
+Sign:
+median: 188282 cycles/ticks
+average: 239873 cycles/ticks
+
+Verify:
+median: 82233 cycles/ticks
+average: 86636 cycles/ticks
+
+elifdicledemir@skywalker:~/dilithium/avx2/test$ cat /proc/cpuinfo | grep "cpu MHz"
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+cpu MHz         : 2419.200
+elifdicledemir@skywalker:~/dilithium/avx2/test$ taskset -c 0 ./test_speed5
+polyvec_matrix_expand:
+median: 79016 cycles/ticks
+average: 85929 cycles/ticks
+
+poly_uniform_eta:
+median: 1744 cycles/ticks
+average: 1748 cycles/ticks
+
+poly_uniform_gamma1:
+median: 3633 cycles/ticks
+average: 3703 cycles/ticks
+
+poly_ntt:
+median: 566 cycles/ticks
+average: 616 cycles/ticks
+
+poly_invntt_tomont:
+median: 535 cycles/ticks
+average: 603 cycles/ticks
+
+poly_pointwise_montgomery:
+median: 97 cycles/ticks
+average: 97 cycles/ticks
+
+poly_challenge:
+median: 1121 cycles/ticks
+average: 1139 cycles/ticks
+
+Keypair:
+median: 125357 cycles/ticks
+average: 135238 cycles/ticks
+
+Sign:
+median: 247185 cycles/ticks
+average: 292437 cycles/ticks
+
+Verify:
+median: 125335 cycles/ticks
+average: 133346 cycles/ticks
+
+elifdicledemir@skywalker:~/dilithium/avx2/test$ cd
+elifdicledemir@skywalker:~$ ls
+PQClean             classical_bench  mk_pqc_cert.sh            oqs              pqc_bench        server.pid        tls-bench
+benchmark.py        dilithium        ns-allinone-3.43          oqs-openssl.zip  private_key.pem  server_pq.crt
+benchmark_setup.sh  kyber            ns-allinone-3.43.tar.bz2  oqs-provider     public_key.pem   server_pq.key
+brief.txt           liboqs           opt                       pqc-tls          server.log       system_specs.txt
+elifdicledemir@skywalker:~$ cd ~
+taskset -c 0 openssl speed rsa2048 > rsa_2048_wsl.txt
+Doing 2048 bits private rsa's for 10s: 28601 2048 bits private RSA's in 9.18s
+Doing 2048 bits public rsa's for 10s: 541324 2048 bits public RSA's in 9.41s
+elifdicledemir@skywalker:~$ cat rsa_2048_wsl.txt
+version: 3.0.13
+built on: Thu Sep 18 11:12:48 2025 UTC
+options: bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -fzero-call-used-regs=used-gpr -DOPENSSL_TLS_SECURITY_LEVEL=2 -Wa,--noexecstack -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/openssl-S7huCI/openssl-3.0.13=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/openssl-S7huCI/openssl-3.0.13=/usr/src/openssl-3.0.13-0ubuntu3.6 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=3
+CPUINFO: OPENSSL_ia32cap=0xfffab2234f8bffff:0x18405fc6f1bf27ab
+                  sign    verify    sign/s verify/s
+rsa 2048 bits 0.000321s 0.000017s   3115.6  57526.5
+elifdicledemir@skywalker:~$ taskset -c 0 openssl speed ecdsa > ecdsa_wsl.txt
+Doing 160 bits sign ecdsa's for 10s: 56945 160 bits ECDSA signs in 9.96s
+Doing 160 bits verify ecdsa's for 10s: 57064 160 bits ECDSA verify in 9.98s
+Doing 192 bits sign ecdsa's for 10s: 47704 192 bits ECDSA signs in 9.98s
+Doing 192 bits verify ecdsa's for 10s: 49141 192 bits ECDSA verify in 9.98s
+Doing 224 bits sign ecdsa's for 10s: 230694 224 bits ECDSA signs in 9.97s
+Doing 224 bits verify ecdsa's for 10s: 111501 224 bits ECDSA verify in 9.98s
+Doing 256 bits sign ecdsa's for 10s: 485048 256 bits ECDSA signs in 9.94s
+Doing 256 bits verify ecdsa's for 10s: 167656 256 bits ECDSA verify in 10.00s
+Doing 384 bits sign ecdsa's for 10s: 10923 384 bits ECDSA signs in 10.00s
+Doing 384 bits verify ecdsa's for 10s: 10775 384 bits ECDSA verify in 9.93s
+Doing 521 bits sign ecdsa's for 10s: 31799 521 bits ECDSA signs in 9.99s
+Doing 521 bits verify ecdsa's for 10s: 11609 521 bits ECDSA verify in 9.83s
+Doing 163 bits sign ecdsa's for 10s: 50692 163 bits ECDSA signs in 9.98s
+Doing 163 bits verify ecdsa's for 10s: 22602 163 bits ECDSA verify in 9.99s
+Doing 233 bits sign ecdsa's for 10s: 32912 233 bits ECDSA signs in 9.96s
+Doing 233 bits verify ecdsa's for 10s: 16302 233 bits ECDSA verify in 9.99s
+Doing 283 bits sign ecdsa's for 10s: 17582 283 bits ECDSA signs in 9.98s
+Doing 283 bits verify ecdsa's for 10s: 9893 283 bits ECDSA verify in 10.00s
+Doing 409 bits sign ecdsa's for 10s: 5998 409 bits ECDSA signs in 9.98s
+Doing 409 bits verify ecdsa's for 10s: 4006 409 bits ECDSA verify in 9.92s
+Doing 571 bits sign ecdsa's for 10s: 5594 571 bits ECDSA signs in 9.99s
+Doing 571 bits verify ecdsa's for 10s: 1734 571 bits ECDSA verify in 9.96s
+Doing 163 bits sign ecdsa's for 10s: 41192 163 bits ECDSA signs in 9.98s
+Doing 163 bits verify ecdsa's for 10s: 14214 163 bits ECDSA verify in 9.91s
+Doing 233 bits sign ecdsa's for 10s: 25035 233 bits ECDSA signs in 9.85s
+Doing 233 bits verify ecdsa's for 10s: 17471 233 bits ECDSA verify in 9.98s
+Doing 283 bits sign ecdsa's for 10s: 20789 283 bits ECDSA signs in 9.98s
+Doing 283 bits verify ecdsa's for 10s: 9926 283 bits ECDSA verify in 9.97s
+Doing 409 bits sign ecdsa's for 10s: 8050 409 bits ECDSA signs in 9.92s
+Doing 409 bits verify ecdsa's for 10s: 5169 409 bits ECDSA verify in 9.97s
+Doing 571 bits sign ecdsa's for 10s: 5013 571 bits ECDSA signs in 9.99s
+Doing 571 bits verify ecdsa's for 10s: 2474 571 bits ECDSA verify in 9.99s
+Doing 256 bits sign ecdsa's for 10s: 25322 256 bits ECDSA signs in 9.96s
+Doing 256 bits verify ecdsa's for 10s: 27442 256 bits ECDSA verify in 10.00s
+Doing 256 bits sign ecdsa's for 10s: 26026 256 bits ECDSA signs in 9.99s
+Doing 256 bits verify ecdsa's for 10s: 27800 256 bits ECDSA verify in 9.99s
+Doing 384 bits sign ecdsa's for 10s: 10657 384 bits ECDSA signs in 9.99s
+Doing 384 bits verify ecdsa's for 10s: 11116 384 bits ECDSA verify in 9.96s
+Doing 384 bits sign ecdsa's for 10s: 7911 384 bits ECDSA signs in 9.94s
+Doing 384 bits verify ecdsa's for 10s: 13499 384 bits ECDSA verify in 9.99s
+Doing 512 bits sign ecdsa's for 10s: 5760 512 bits ECDSA signs in 9.24s
+Doing 512 bits verify ecdsa's for 10s: 8096 512 bits ECDSA verify in 9.20s
+Doing 512 bits sign ecdsa's for 10s: 7266 512 bits ECDSA signs in 9.21s
+Doing 512 bits verify ecdsa's for 10s: 9559 512 bits ECDSA verify in 9.23s
+elifdicledemir@skywalker:~$ cat ecdsa_wsl.txt
+version: 3.0.13
+built on: Thu Sep 18 11:12:48 2025 UTC
+options: bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -fzero-call-used-regs=used-gpr -DOPENSSL_TLS_SECURITY_LEVEL=2 -Wa,--noexecstack -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/openssl-S7huCI/openssl-3.0.13=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/openssl-S7huCI/openssl-3.0.13=/usr/src/openssl-3.0.13-0ubuntu3.6 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=3
+CPUINFO: OPENSSL_ia32cap=0xfffab2234f8bffff:0x18405fc6f1bf27ab
+                              sign    verify    sign/s verify/s
+ 160 bits ecdsa (secp160r1)   0.0002s   0.0002s   5717.4   5717.8
+ 192 bits ecdsa (nistp192)   0.0002s   0.0002s   4780.0   4923.9
+ 224 bits ecdsa (nistp224)   0.0000s   0.0001s  23138.8  11172.4
+ 256 bits ecdsa (nistp256)   0.0000s   0.0001s  48797.6  16765.6
+ 384 bits ecdsa (nistp384)   0.0009s   0.0009s   1092.3   1085.1
+ 521 bits ecdsa (nistp521)   0.0003s   0.0008s   3183.1   1181.0
+ 163 bits ecdsa (nistk163)   0.0002s   0.0004s   5079.4   2262.5
+ 233 bits ecdsa (nistk233)   0.0003s   0.0006s   3304.4   1631.8
+ 283 bits ecdsa (nistk283)   0.0006s   0.0010s   1761.7    989.3
+ 409 bits ecdsa (nistk409)   0.0017s   0.0025s    601.0    403.8
+ 571 bits ecdsa (nistk571)   0.0018s   0.0057s    560.0    174.1
+ 163 bits ecdsa (nistb163)   0.0002s   0.0007s   4127.5   1434.3
+ 233 bits ecdsa (nistb233)   0.0004s   0.0006s   2541.6   1750.6
+ 283 bits ecdsa (nistb283)   0.0005s   0.0010s   2083.1    995.6
+ 409 bits ecdsa (nistb409)   0.0012s   0.0019s    811.5    518.5
+ 571 bits ecdsa (nistb571)   0.0020s   0.0040s    501.8    247.6
+ 256 bits ecdsa (brainpoolP256r1)   0.0004s   0.0004s   2542.4   2744.2
+ 256 bits ecdsa (brainpoolP256t1)   0.0004s   0.0004s   2605.2   2782.8
+ 384 bits ecdsa (brainpoolP384r1)   0.0009s   0.0009s   1066.8   1116.1
+ 384 bits ecdsa (brainpoolP384t1)   0.0013s   0.0007s    795.9   1351.3
+ 512 bits ecdsa (brainpoolP512r1)   0.0016s   0.0011s    623.4    880.0
+ 512 bits ecdsa (brainpoolP512t1)   0.0013s   0.0010s    788.9   1035.6
+elifdicledemir@skywalker:~$ taskset -c 0 openssl speed ecdh > ecdh_wsl.txt
+Doing 160 bits  ecdh's for 10s: 56226 160-bits ECDH ops in 9.76s
+Doing 192 bits  ecdh's for 10s: 49137 192-bits ECDH ops in 9.99s
+Doing 224 bits  ecdh's for 10s: 178292 224-bits ECDH ops in 10.00s
+Doing 256 bits  ecdh's for 10s: 223213 256-bits ECDH ops in 10.00s
+Doing 384 bits  ecdh's for 10s: 12192 384-bits ECDH ops in 9.86s
+Doing 521 bits  ecdh's for 10s: 34917 521-bits ECDH ops in 9.99s
+Doing 163 bits  ecdh's for 10s: 58122 163-bits ECDH ops in 9.98s
+Doing 233 bits  ecdh's for 10s: 43910 233-bits ECDH ops in 10.00s
+Doing 283 bits  ecdh's for 10s: 24545 283-bits ECDH ops in 9.98s
+Doing 409 bits  ecdh's for 10s: 14863 409-bits ECDH ops in 10.00s
+Doing 571 bits  ecdh's for 10s: 6326 571-bits ECDH ops in 9.96s
+Doing 163 bits  ecdh's for 10s: 55180 163-bits ECDH ops in 9.98s
+Doing 233 bits  ecdh's for 10s: 42076 233-bits ECDH ops in 9.98s
+Doing 283 bits  ecdh's for 10s: 23436 283-bits ECDH ops in 9.98s
+Doing 409 bits  ecdh's for 10s: 14040 409-bits ECDH ops in 10.00s
+Doing 571 bits  ecdh's for 10s: 6160 571-bits ECDH ops in 9.99s
+Doing 256 bits  ecdh's for 10s: 29970 256-bits ECDH ops in 9.99s
+Doing 256 bits  ecdh's for 10s: 29754 256-bits ECDH ops in 9.95s
+Doing 384 bits  ecdh's for 10s: 12245 384-bits ECDH ops in 10.00s
+Doing 384 bits  ecdh's for 10s: 12365 384-bits ECDH ops in 9.99s
+Doing 512 bits  ecdh's for 10s: 8476 512-bits ECDH ops in 10.00s
+Doing 512 bits  ecdh's for 10s: 8828 512-bits ECDH ops in 10.00s
+Doing 253 bits  ecdh's for 10s: 330962 253-bits ECDH ops in 10.00s
+Doing 448 bits  ecdh's for 10s: 56354 448-bits ECDH ops in 10.00s
+elifdicledemir@skywalker:~$ cat ecdh_wsl.txt
+version: 3.0.13
+built on: Thu Sep 18 11:12:48 2025 UTC
+options: bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -fzero-call-used-regs=used-gpr -DOPENSSL_TLS_SECURITY_LEVEL=2 -Wa,--noexecstack -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/openssl-S7huCI/openssl-3.0.13=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/openssl-S7huCI/openssl-3.0.13=/usr/src/openssl-3.0.13-0ubuntu3.6 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=3
+CPUINFO: OPENSSL_ia32cap=0xfffab2234f8bffff:0x18405fc6f1bf27ab
+                              op      op/s
+ 160 bits ecdh (secp160r1)   0.0002s   5760.9
+ 192 bits ecdh (nistp192)   0.0002s   4918.6
+ 224 bits ecdh (nistp224)   0.0001s  17829.2
+ 256 bits ecdh (nistp256)   0.0000s  22321.3
+ 384 bits ecdh (nistp384)   0.0008s   1236.5
+ 521 bits ecdh (nistp521)   0.0003s   3495.2
+ 163 bits ecdh (nistk163)   0.0002s   5823.8
+ 233 bits ecdh (nistk233)   0.0002s   4391.0
+ 283 bits ecdh (nistk283)   0.0004s   2459.4
+ 409 bits ecdh (nistk409)   0.0007s   1486.3
+ 571 bits ecdh (nistk571)   0.0016s    635.1
+ 163 bits ecdh (nistb163)   0.0002s   5529.1
+ 233 bits ecdh (nistb233)   0.0002s   4216.0
+ 283 bits ecdh (nistb283)   0.0004s   2348.3
+ 409 bits ecdh (nistb409)   0.0007s   1404.0
+ 571 bits ecdh (nistb571)   0.0016s    616.6
+ 256 bits ecdh (brainpoolP256r1)   0.0003s   3000.0
+ 256 bits ecdh (brainpoolP256t1)   0.0003s   2990.4
+ 384 bits ecdh (brainpoolP384r1)   0.0008s   1224.5
+ 384 bits ecdh (brainpoolP384t1)   0.0008s   1237.7
+ 512 bits ecdh (brainpoolP512r1)   0.0012s    847.6
+ 512 bits ecdh (brainpoolP512t1)   0.0011s    882.8
+ 253 bits ecdh (X25519)   0.0000s  33096.2
+ 448 bits ecdh (X448)   0.0002s   5635.4
+elifdicledemir@skywalker:~$

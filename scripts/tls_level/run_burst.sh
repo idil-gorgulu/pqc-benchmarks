@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# End-to-end TLS burst runner:
-# - starts s_server pinned to core 0
-# - runs repeated s_client connections pinned to core 1 for N seconds
-# - captures loopback traffic to capture.pcap
-# - writes bursts.csv as a single [t0,t1] window
-# - slices window and runs tshark extraction + Python analysis
+# TLS-level: End-to-end TLS burst runner.
+#
+# See also:
+# - scripts/tls_level/extract_windows.sh
+# - scripts/tls_level/sanity_check.sh
 #
 # Examples:
 # PQC:
-#   ./scripts/run_burst.sh --mode pq --group MLKEM512 --sigalg mldsa44 \
+#   ./scripts/tls_level/run_burst.sh --mode pq --group MLKEM512 --sigalg mldsa44 \
 #     --cert artifacts/certs/server_pq.crt --key artifacts/certs/server_pq.key \
 #     --seconds 10 --out runs/mlkem512_mldsa44_try1
 #
 # Classical:
-#   ./scripts/run_burst.sh --mode classic --group P-256 \
+#   ./scripts/tls_level/run_burst.sh --mode classic --group P-256 \
 #     --cert artifacts/certs/server_classic.crt --key artifacts/certs/server_classic.key \
 #     --seconds 10 --out runs/p256_try1
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 
 MODE="pq"         # pq | classic
 PORT="4433"
@@ -43,7 +44,7 @@ while [[ $# -gt 0 ]]; do
     --iface) IFACE="$2"; shift 2 ;;
     --out) OUT="$2"; shift 2 ;;
     -h|--help)
-      sed -n '1,120p' "$0"
+      sed -n '1,140p' "$0"
       exit 0
       ;;
     *)
@@ -175,8 +176,8 @@ echo "t0,t1" > bursts.csv
 echo "$T0,$T1" >> bursts.csv
 
 echo "[INFO] Extract+Analyze (single window)"
-ANALYZER="../../analysis/analyze_tls_v3.py"
-EXTRACT="../../scripts/extract_windows.sh"
+ANALYZER="$ROOT_DIR/analysis/analyze_tls_v3.py"
+EXTRACT="$ROOT_DIR/scripts/tls_level/extract_windows.sh"
 
 # Use a single window index=1
 bash "$EXTRACT" --pcap capture.pcap --bursts bursts.csv --port "$PORT" --analyzer "$ANALYZER"
@@ -185,3 +186,5 @@ echo "[INFO] Done. Key files:"
 ls -1 capture.pcap bursts.csv analysis_1.csv summary_1.txt 2>/dev/null || true
 
 popd >/dev/null
+
+

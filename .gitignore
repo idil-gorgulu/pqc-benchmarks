@@ -32,6 +32,10 @@ runs/**/summary_*.txt
 runs/**/server.log
 runs/**/server.pid
 
+# Algorithm-level runs (microbench logs + cloned upstream repos)
+runs/algorithm_level/**
+runs/**/work/**
+
 # Plots
 *.png
 *.pdf
